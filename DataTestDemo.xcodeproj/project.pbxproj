@@ -17,6 +17,7 @@
 		5795C8361C3B97C6001A35A7 /* UIColor+Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 5795C8351C3B97C6001A35A7 /* UIColor+Image.m */; };
 		5795C83A1C3B9F97001A35A7 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 5795C8391C3B9F97001A35A7 /* Person.m */; };
 		5795C83D1C3BAE79001A35A7 /* UIImage+Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 5795C83C1C3BAE79001A35A7 /* UIImage+Image.m */; };
+		5795C8401C3BB7B8001A35A7 /* Person+Property.m in Sources */ = {isa = PBXBuildFile; fileRef = 5795C83F1C3BB7B8001A35A7 /* Person+Property.m */; };
 		57D863941C3AB81100B523CD /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D863931C3AB81100B523CD /* MainViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,8 @@
 		5795C8391C3B9F97001A35A7 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		5795C83B1C3BAE79001A35A7 /* UIImage+Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Image.h"; sourceTree = "<group>"; };
 		5795C83C1C3BAE79001A35A7 /* UIImage+Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Image.m"; sourceTree = "<group>"; };
+		5795C83E1C3BB7B8001A35A7 /* Person+Property.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Person+Property.h"; sourceTree = "<group>"; };
+		5795C83F1C3BB7B8001A35A7 /* Person+Property.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Person+Property.m"; sourceTree = "<group>"; };
 		57D863921C3AB81100B523CD /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		57D863931C3AB81100B523CD /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		B3B901E8F0CF80573AB96752 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -107,6 +110,8 @@
 				5721FAF21C3AB72400DAD43C /* main.m */,
 				5795C83B1C3BAE79001A35A7 /* UIImage+Image.h */,
 				5795C83C1C3BAE79001A35A7 /* UIImage+Image.m */,
+				5795C83E1C3BB7B8001A35A7 /* Person+Property.h */,
+				5795C83F1C3BB7B8001A35A7 /* Person+Property.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -258,6 +263,7 @@
 				5795C8361C3B97C6001A35A7 /* UIColor+Image.m in Sources */,
 				5795C83A1C3B9F97001A35A7 /* Person.m in Sources */,
 				5721FAF61C3AB72400DAD43C /* AppDelegate.m in Sources */,
+				5795C8401C3BB7B8001A35A7 /* Person+Property.m in Sources */,
 				57D863941C3AB81100B523CD /* MainViewController.m in Sources */,
 				5795C8301C3B613A001A35A7 /* NonConcurrentOperation.m in Sources */,
 				5721FAF31C3AB72400DAD43C /* main.m in Sources */,

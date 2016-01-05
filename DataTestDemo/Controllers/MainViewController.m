@@ -14,6 +14,7 @@
 #import <objc/message.h>
 #import "Person.h"
 #import "UIImage+Image.h"
+#import "Person+Property.h"
 @interface MainViewController ()
 
 @end
@@ -25,6 +26,13 @@
 
 
 }
+/**  动态绑定属性  */
+- (void)addPropertyWithCategory{
+    Person * person = [[Person alloc]init];
+    person.work = @"Coding Man";
+    NSLog(@"%@",person.work);
+}
+
 /**  增加方法实现  */
 - (void)class_addMethod{
     Person * p = [[Person alloc]init];
