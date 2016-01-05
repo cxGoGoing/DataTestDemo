@@ -13,6 +13,7 @@
 #import "UIColor+Image.h"
 #import <objc/message.h>
 #import "Person.h"
+#import "UIImage+Image.h"
 @interface MainViewController ()
 
 @end
@@ -21,7 +22,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
 }
+/**  交换方法实现  */
+- (void)exchangeMethodImplement{
+    UIImageView * exchangeImageView = [[UIImageView alloc]init];
+    [self.view addSubview:exchangeImageView];
+    [exchangeImageView autoCenterInSuperview];
+    [exchangeImageView autoSetDimensionsToSize:CGSizeMake(100, 100)];
+    exchangeImageView.image = [UIImage imageNamed:@"123"];
+}
+
 /**  用纯色画图片  */
 - (void)createImageWithColor{
     UIImageView * imageView = [[UIImageView alloc]init];
