@@ -23,7 +23,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+
 }
+/**  增加方法实现  */
+- (void)class_addMethod{
+    Person * p = [[Person alloc]init];
+    [p performSelector:@selector(eat)];
+
+}
+
 /**  交换方法实现  */
 - (void)exchangeMethodImplement{
     UIImageView * exchangeImageView = [[UIImageView alloc]init];

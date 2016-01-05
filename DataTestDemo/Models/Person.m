@@ -7,9 +7,17 @@
 //
 
 #import "Person.h"
-
+#import <objc/message.h>
 @implementation Person
-+ (void)eat{
-    NSLog(@"%s:eat",__func__);
+void eat(id self ,SEL sel){
+    NSLog(@"%@ %@",self,NSStringFromSelector(sel));
 }
+
++ (BOOL)resolveInstanceMethod:(SEL)sel{
+    if(sel == @selector(eat)){
+        class_addMethod(self, @selector(eat),eat, "v@:");
+    }
+    return [super resolveInstanceMethod:sel];
+}
+
 @end
