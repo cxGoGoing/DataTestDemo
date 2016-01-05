@@ -9,6 +9,8 @@
 #import "MainViewController.h"
 #import "NonConcurrentOperation.h"
 #import "ConcurrentOperation.h"
+#import <PureLayout.h>
+#import "UIColor+Image.h"
 @interface MainViewController ()
 
 @end
@@ -17,8 +19,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     
     // Do any additional setup after loading the view.
+}
+/**  用纯色画图片  */
+- (void)createImageWithColor{
+    UIImageView * imageView = [[UIImageView alloc]init];
+    [self.view addSubview:imageView];
+    [imageView autoCenterInSuperview];
+    [imageView autoSetDimensionsToSize:CGSizeMake(100, 100)];
+    imageView.image = [UIColor createImageWith:[UIColor yellowColor]];
+
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
