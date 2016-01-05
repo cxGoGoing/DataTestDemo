@@ -11,6 +11,8 @@
 #import "ConcurrentOperation.h"
 #import <PureLayout.h>
 #import "UIColor+Image.h"
+#import <objc/message.h>
+#import "Person.h"
 @interface MainViewController ()
 
 @end
@@ -19,9 +21,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    
-    // Do any additional setup after loading the view.
 }
 /**  用纯色画图片  */
 - (void)createImageWithColor{
