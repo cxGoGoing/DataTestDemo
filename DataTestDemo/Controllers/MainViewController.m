@@ -22,9 +22,14 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    ConcurrentOperation * operation = [[ConcurrentOperation alloc]init];
-    [operation start];
+    [self concurrentOperation];
 
+}
+/**  异步执行这个操作  */
+- (void)concurrentOperation{
+    NSOperationQueue * queue = [[NSOperationQueue alloc]init];
+    ConcurrentOperation * operation = [[ConcurrentOperation alloc]init];
+    [queue addOperation:operation];
 }
 
 - (void)nonConcurrentOperation{
