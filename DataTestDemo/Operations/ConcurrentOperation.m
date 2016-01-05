@@ -30,7 +30,7 @@ typedef NS_ENUM(NSInteger,ConcurrentOperationState){/**< 执行的状态  */
 }
 
 - (void)start{
-    __weak __typeof(self)weakSelf = self;
+    __weak typeof(self)weakSelf = self;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [weakSelf willChangeValueForKey:@"isFinished"];
         weakSelf.state = ConcurrentOperationStateFinished;
@@ -44,6 +44,6 @@ typedef NS_ENUM(NSInteger,ConcurrentOperationState){/**< 执行的状态  */
 }
 
 - (void)dealloc{
-    NSLog(@"deallco called");
+    NSLog(@"dealloc called");
 }
 @end

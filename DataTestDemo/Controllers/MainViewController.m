@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import "NonConcurrentOperation.h"
+#import "ConcurrentOperation.h"
 @interface MainViewController ()
 
 @end
@@ -21,9 +22,14 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    NonConcurrentOperation * operation = [[NonConcurrentOperation alloc]init];
+    ConcurrentOperation * operation = [[ConcurrentOperation alloc]init];
     [operation start];
 
+}
+
+- (void)nonConcurrentOperation{
+    NonConcurrentOperation * operation = [[NonConcurrentOperation alloc]init];
+    [operation start];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
