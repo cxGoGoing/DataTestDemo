@@ -16,6 +16,7 @@ void eat(id self ,SEL sel){
 + (BOOL)resolveInstanceMethod:(SEL)sel{
     if(sel == @selector(eat)){
         class_addMethod(self, @selector(eat),eat, "v@:");
+        return YES;
     }
     return [super resolveInstanceMethod:sel];
 }

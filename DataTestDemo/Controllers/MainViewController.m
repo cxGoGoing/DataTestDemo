@@ -24,8 +24,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+}
+/**  动态添加方法  */
+- (void)dynamicMethod{
+    [self performSelector:@selector(dosomething)];
 
 }
+void dynamicMethodIMP (id self, SEL _cmd) {
+
+    NSLog(@"doSomething SEL");
+}
+int newMethod(id self ,SEL _cmd,NSString * str){
+    return 100;
+}
+/**  如果在这个方法里面没哟找到方法，就会去forwardTarget中看是否可以执行这个方法  */
++ (BOOL)resolveInstanceMethod:(SEL)sel{
+    if (sel == @selector(dosomething)) {
+        NSLog(@"add method here");
+        class_addMethod([self class], @selector(dynamicMethodIMP), (IMP)dynamicMethodIMP, "v@:");
+       // class_addMethod([self class], @selector(newMethod), (IMP)newMethod, @"i@:@");
+        return YES;
+    }
+    return [super resolveInstanceMethod:sel];
+}
+
 /**  动态绑定属性  */
 - (void)addPropertyWithCategory{
     Person * person = [[Person alloc]init];
