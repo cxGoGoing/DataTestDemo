@@ -22,8 +22,7 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    [self concurrentOperation];
-
+    
 }
 /**  异步执行这个操作  */
 - (void)concurrentOperation{

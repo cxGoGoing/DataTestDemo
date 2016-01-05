@@ -40,7 +40,32 @@
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+  UIPasteboard *pasteBoard = [UIPasteboard generalPasteboard];
+  if ([pasteBoard.string hasPrefix:@"http://"] ||
+      [pasteBoard.string hasPrefix:@"https://"]) {
+    UIAlertController *alertVc = [UIAlertController
+        alertControllerWithTitle:@"要打开其中的链接吗？"
+                         message:nil
+                  preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *actionConfirm =
+        [UIAlertAction actionWithTitle:@"打开"
+                                 style:UIAlertActionStyleDefault
+                               handler:^(UIAlertAction *_Nonnull action) {
+                                 NSLog(@"打开链接");
+                               }];
+    UIAlertAction *actionRefuse =
+        [UIAlertAction actionWithTitle:@"忽略"
+                                 style:UIAlertActionStyleDefault
+                               handler:^(UIAlertAction *_Nonnull action) {
+                                 NSLog(@"忽略");
+                                 pasteBoard.string = @"";
+                               }];
+    [alertVc addAction:actionConfirm];
+    [alertVc addAction:actionRefuse];
+    [self.window.rootViewController presentViewController:alertVc
+                                                 animated:YES
+                                               completion:nil];
+  }
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
