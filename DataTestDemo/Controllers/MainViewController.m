@@ -28,11 +28,12 @@
     UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setTitle:@"clickMe" forState:UIControlStateNormal];
     [button setFrame:CGRectMake(100, 100, 100, 100)];
+    button.backgroundColor = [UIColor redColor];
     [button addTarget:self action:@selector(hitMe) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
 
     _myBook = [[Book alloc] init];
-    NSDictionary *dic = @{ @"名称" : @"bookName", @"价格" : @"10"};
+    NSDictionary *dic = @{ @"bookName":@"名称是什么", @"price" : @"10"};
     [_myBook setValuesForKeysWithDictionary:dic];
 
     [_myBook
@@ -40,7 +41,7 @@
          forKeyPath:@"price"
             options:NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew
             context:NULL];
-    NSLog(@"mybook.bookName--");
+    NSLog(@"mybook.bookName-%@ mybook.price %.2f",_myBook.bookName,_myBook.price);
 }
 - (void)hitMe{
     int num =  arc4random()%3;
