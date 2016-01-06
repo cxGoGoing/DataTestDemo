@@ -42,9 +42,26 @@
             options:NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew
             context:NULL];
     NSLog(@"mybook.bookName-%@ mybook.price %.2f",_myBook.bookName,_myBook.price);
+
 }
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{
+    float newValue = [[change objectForKey:NSKeyValueChangeNewKey]floatValue];
+    float oldValue = [[change objectForKey:NSKeyValueChangeOldKey]floatValue];
+    NSArray *array = [NSArray arrayWithObjects:[UIColor orangeColor],[UIColor cyanColor], [UIColor yellowColor], nil];
+    int random = arc4random()%3;
+    if(newValue != oldValue){
+         NSLog(@"priceHasChange?price%.2f",newValue);
+        self.view.backgroundColor = [array objectAtIndex:random];
+    }
+
+}
+
+- (void)dealloc{
+    [_myBook removeObserver:self forKeyPath:@"price"];
+}
+
 - (void)hitMe{
-    int num =  arc4random()%3;
+    int num =  arc4random()%100;
     [_myBook setValue:@(num) forKey:@"price"];
 }
 /**  kvc 赋值测试  */
