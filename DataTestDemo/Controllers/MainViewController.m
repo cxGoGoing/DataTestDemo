@@ -25,6 +25,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+
+}
+/**  属性观察的设置kvo  */
+- (void)KVOTest{
     UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setTitle:@"clickMe" forState:UIControlStateNormal];
     [button setFrame:CGRectMake(100, 100, 100, 100)];
@@ -37,13 +42,14 @@
     [_myBook setValuesForKeysWithDictionary:dic];
 
     [_myBook
-        addObserver:self
-         forKeyPath:@"price"
-            options:NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew
-            context:NULL];
+     addObserver:self
+     forKeyPath:@"price"
+     options:NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew
+     context:NULL];
     NSLog(@"mybook.bookName-%@ mybook.price %.2f",_myBook.bookName,_myBook.price);
-
 }
+
+/**  系统会自动调用这个方法观察属性值的变化  */
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{
     float newValue = [[change objectForKey:NSKeyValueChangeNewKey]floatValue];
     float oldValue = [[change objectForKey:NSKeyValueChangeOldKey]floatValue];
