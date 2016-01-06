@@ -25,10 +25,23 @@
     [super viewDidLoad];
 
 }
+/**  调用其他控制器中的方法  */
+- (void)performSelectorWithAnotherController{
+ [self performSelector:@selector(secondeVCMethod)];
+}
 /**  动态添加方法  */
 - (void)dynamicMethod{
     [self performSelector:@selector(dosomething)];
+}
 
+- (id)forwardingTargetForSelector:(SEL)aSelector{
+    Class class = NSClassFromString(@"SecondViewController");
+    UIViewController * vc = class.new;
+    if(aSelector == NSSelectorFromString(@"secondeVCMethod")){
+        NSLog(@"SecondVC do it");
+        return vc;
+    }
+    return nil;
 }
 void dynamicMethodIMP (id self, SEL _cmd) {
 
