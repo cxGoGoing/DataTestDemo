@@ -98,6 +98,7 @@
 		5721FAF01C3AB72400DAD43C /* DataTestDemo */ = {
 			isa = PBXGroup;
 			children = (
+				577992371C3CBAEA00AE2FD3 /* Categorys */,
 				5795C8371C3B9F85001A35A7 /* Models */,
 				5795C82D1C3B6122001A35A7 /* Operations */,
 				57D863911C3AB7FE00B523CD /* Controllers */,
@@ -123,6 +124,13 @@
 				5795C83F1C3BB7B8001A35A7 /* Person+Property.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		577992371C3CBAEA00AE2FD3 /* Categorys */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Categorys;
 			sourceTree = "<group>";
 		};
 		5795C82D1C3B6122001A35A7 /* Operations */ = {

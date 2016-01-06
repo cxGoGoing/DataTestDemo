@@ -15,6 +15,8 @@
 #import "Person.h"
 #import "UIImage+Image.h"
 #import "Person+Property.h"
+#import "Book.h"
+#import "Publish.h"
 @interface MainViewController ()
 
 @end
@@ -24,6 +26,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+
+}
+/**  kvc 赋值测试  */
+- (void)KVCTest{
+    Publish * publish = [[Publish alloc]init];
+    Book * myBook = [[Book alloc]init];
+    publish.book = myBook;
+    // keyPath赋值：
+    [publish setValue:@"<11月的肖邦>" forKeyPath:@"book.bookName"];
+    [publish setValue:@"私有属性被我设置" forKey:@"testStr"];
+    NSLog(@"--- %@", [publish valueForKey:@"testStr"]);
+    NSLog(@"--- %@", [publish valueForKeyPath:@"book.bookName"]);
+    [publish logTestStr];
 }
 /**  调用其他控制器中的方法  */
 - (void)performSelectorWithAnotherController{
