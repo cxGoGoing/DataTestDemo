@@ -21,10 +21,15 @@
     [button setTitle:@"click Me" forState:UIControlStateNormal];
     button.backgroundColor = [UIColor redColor];
     [self.view addSubview:button];
-    [button addTarget:self action:@selector(clickMe:) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:self action:@selector(clickMe2:) forControlEvents:UIControlEventTouchUpInside];
     // Do any additional setup after loading the view.
 }
-
+- (void)blockWithMessage:(void (^)(NSString *))messageBlock{
+}
+- (void)clickMe2:(UIButton*)btn{
+    self.messageBlock(btn.titleLabel.text);
+    [self.navigationController popViewControllerAnimated:YES];
+}
 - (void)clickMe:(UIButton*)btn{
   if (self.delegate &&
       [self.delegate
@@ -33,6 +38,7 @@
           [self.navigationController popViewControllerAnimated:YES];
           ;
   }
+
 }
 - (void)secondeVCMethod{
     NSLog(@"This is secondVc Method");

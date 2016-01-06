@@ -33,6 +33,12 @@
 
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    self.secondVc.messageBlock = ^(NSString*message){
+        NSLog(@"%s %@",__func__,message);
+    };
+//    [self.secondVc blockWithMessage:^(NSString *message) {
+//        NSLog(@"%s %@",__func__,message);
+//    }];
     [self.navigationController pushViewController:self.secondVc animated:YES];
 }
 - (void)secondViewController:(SecondViewController *)secondVc inputMessage:(NSString *)message{
