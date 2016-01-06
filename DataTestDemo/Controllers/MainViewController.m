@@ -18,15 +18,33 @@
 #import "Book.h"
 #import "Publish.h"
 @interface MainViewController ()
-
+@property (nonatomic,strong)Book * myBook;
 @end
 
 @implementation MainViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setTitle:@"clickMe" forState:UIControlStateNormal];
+    [button setFrame:CGRectMake(100, 100, 100, 100)];
+    [button addTarget:self action:@selector(hitMe) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button];
 
+    _myBook = [[Book alloc] init];
+    NSDictionary *dic = @{ @"名称" : @"bookName", @"价格" : @"10"};
+    [_myBook setValuesForKeysWithDictionary:dic];
 
+    [_myBook
+        addObserver:self
+         forKeyPath:@"price"
+            options:NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew
+            context:NULL];
+    NSLog(@"mybook.bookName--");
+}
+- (void)hitMe{
+    int num =  arc4random()%3;
+    [_myBook setValue:@(num) forKey:@"price"];
 }
 /**  kvc 赋值测试  */
 - (void)KVCTest{
