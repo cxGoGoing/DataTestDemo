@@ -17,8 +17,10 @@
 #import "Person+Property.h"
 #import "Book.h"
 #import "Publish.h"
-@interface MainViewController ()
+#import "SecondViewController.h"
+@interface MainViewController ()<SecondViewControllerDelegate>
 @property (nonatomic,strong)Book * myBook;
+@property (nonatomic,strong)SecondViewController * secondVc;
 @end
 
 
@@ -26,9 +28,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    self.secondVc = [[SecondViewController alloc]init];
+    self.secondVc.delegate = self;
 
 }
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self.navigationController pushViewController:self.secondVc animated:YES];
+}
+- (void)secondViewController:(SecondViewController *)secondVc inputMessage:(NSString *)message{
+    NSLog(@"%s%@",__func__,message);
+}
+
+
 /**  notificationCenter的测试  */
 - (void)notificationTest{
     self.myBook = [[Book alloc]init];
@@ -166,9 +177,6 @@ int newMethod(id self ,SEL _cmd,NSString * str){
 
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    
-}
 /**  异步执行这个操作  */
 - (void)concurrentOperation{
     NSOperationQueue * queue = [[NSOperationQueue alloc]init];

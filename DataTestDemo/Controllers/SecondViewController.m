@@ -16,7 +16,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UIButton * button = [[UIButton alloc]init];
+    button.frame = CGRectMake(100, 100, 100, 100);
+    [button setTitle:@"click Me" forState:UIControlStateNormal];
+    button.backgroundColor = [UIColor redColor];
+    [self.view addSubview:button];
+    [button addTarget:self action:@selector(clickMe:) forControlEvents:UIControlEventTouchUpInside];
     // Do any additional setup after loading the view.
+}
+
+- (void)clickMe:(UIButton*)btn{
+  if (self.delegate &&
+      [self.delegate
+          respondsToSelector:@selector(secondViewController:inputMessage:)]) {
+          [self.delegate secondViewController:self inputMessage:btn.titleLabel.text];
+          [self.navigationController popViewControllerAnimated:YES];
+          ;
+  }
 }
 - (void)secondeVCMethod{
     NSLog(@"This is secondVc Method");
