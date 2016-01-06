@@ -21,12 +21,23 @@
 @property (nonatomic,strong)Book * myBook;
 @end
 
+
 @implementation MainViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.myBook = [[Book alloc]init];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(action:) name:NotificationControler object:NULL];
 
 
+}
+
+- (void)action:(NSNotification*)noti{
+    NSLog(@"我被通知了%@",noti);
+    int num = [noti.object intValue];
+    if(num<6){
+        [[NSNotificationCenter defaultCenter]removeObserver:self name:NotificationControler object:nil];
+    }
 }
 /**  属性观察的设置kvo  */
 - (void)KVOTest{
