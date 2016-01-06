@@ -26,9 +26,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+
+}
+/**  notificationCenter的测试  */
+- (void)notificationTest{
     self.myBook = [[Book alloc]init];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(action:) name:NotificationControler object:NULL];
-
 
 }
 
