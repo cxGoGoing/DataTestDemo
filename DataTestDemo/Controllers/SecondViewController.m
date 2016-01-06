@@ -7,9 +7,9 @@
 //
 
 #import "SecondViewController.h"
-
+typedef void(^MsgBlock)(NSString*message);
 @interface SecondViewController ()
-
+@property (nonatomic,copy)MsgBlock msgblock;
 @end
 
 @implementation SecondViewController
@@ -25,9 +25,11 @@
     // Do any additional setup after loading the view.
 }
 - (void)blockWithMessage:(void (^)(NSString *))messageBlock{
+    self.msgblock = messageBlock;
 }
 - (void)clickMe2:(UIButton*)btn{
     self.messageBlock(btn.titleLabel.text);
+    self.msgblock(btn.titleLabel.text);
     [self.navigationController popViewControllerAnimated:YES];
 }
 - (void)clickMe:(UIButton*)btn{
