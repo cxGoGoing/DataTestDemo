@@ -18,6 +18,7 @@
 #import "Book.h"
 #import "Publish.h"
 #import "SecondViewController.h"
+#import "Person+AddProperty.h"
 @interface MainViewController ()<SecondViewControllerDelegate>
 @property (nonatomic,strong)Book * myBook;
 @property (nonatomic,strong)SecondViewController * secondVc;
@@ -28,9 +29,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     self.secondVc = [[SecondViewController alloc]init];
     self.secondVc.delegate = self;
 
+}
+/**  分类增加属性  */
+- (void)addProPerty2{
+    Person * p = [[Person alloc]init];
+    p.emailAddress = @"chengxun@haodou.com";
+    NSLog(@"p.emailAddress%@",p.emailAddress);
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     self.secondVc.messageBlock = ^(NSString*message){
