@@ -17,6 +17,10 @@ typedef void(^MsgBlock)(NSString*message);
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setUpUI];
+    // Do any additional setup after loading the view.
+}
+- (void)setUpUI{
     UIButton * button = [[UIButton alloc]init];
     button.frame = CGRectMake(100, 100, 100, 100);
     [button setTitle:@"click Me" forState:UIControlStateNormal];
@@ -32,8 +36,8 @@ typedef void(^MsgBlock)(NSString*message);
     [self.view addSubview:anotherButton];
 
     self.view.backgroundColor = [UIColor greenColor];
-    // Do any additional setup after loading the view.
 }
+
 - (void)pushMeToAnotherController{
     ThirdViewController * thirdVc = [[ThirdViewController alloc]init];
     [self.navigationController pushViewController:thirdVc animated:YES];
