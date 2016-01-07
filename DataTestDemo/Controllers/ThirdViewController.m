@@ -7,8 +7,9 @@
 //
 
 #import "ThirdViewController.h"
-
-@interface ThirdViewController ()
+#import "CustomCollectionViewLayout.h"
+#import <PureLayout.h>
+@interface ThirdViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
 @property (nonatomic,weak)UICollectionView * collectionView;
 @end
 
@@ -21,8 +22,31 @@
 
 - (void)setUpCollectionView{
     self.view.backgroundColor = [UIColor whiteColor];
-
+    CustomCollectionViewLayout * layout = [[CustomCollectionViewLayout alloc]init];
+    UICollectionView * collectionView = [[UICollectionView alloc]initWithFrame:CGRectZero collectionViewLayout:layout];
+    [self.view addSubview:collectionView];
+    [collectionView autoPinEdgesToSuperviewEdges];
+    collectionView.backgroundColor = [UIColor whiteColor];
+    collectionView.dataSource = self;
+    collectionView.dataSource = self;
+    [collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([UICollectionViewCell class])];
+    self.collectionView = collectionView;
 }
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+    return 1;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    return 3;
+}
+
+- (UICollectionViewCell*)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    UICollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([UICollectionViewCell class]) forIndexPath:indexPath];
+    cell.backgroundColor = [UIColor yellowColor];
+    return cell;
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
