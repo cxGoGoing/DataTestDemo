@@ -30,9 +30,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+
     self.secondVc = [[SecondViewController alloc]init];
     self.secondVc.delegate = self;
 
+}
+/**  转换成拉丁字符 根据 kCFStringTransformToLatin 枚举来判读  */
+- (void)transfetCFString{
+    CFMutableStringRef string = CFStringCreateMutableCopy(NULL, 0, CFSTR("你好"));
+    CFStringTransform(string, NULL, kCFStringTransformToLatin, false);
+    NSString * str = (__bridge_transfer NSString*)(string);
+    NSLog(@"%@",str);
 }
 /**  分类增加属性  */
 - (void)addProPerty2{
