@@ -16,6 +16,7 @@
 		577992331C3CB64E00AE2FD3 /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 577992321C3CB64E00AE2FD3 /* Book.m */; };
 		577992361C3CB67D00AE2FD3 /* Publish.m in Sources */ = {isa = PBXBuildFile; fileRef = 577992351C3CB67D00AE2FD3 /* Publish.m */; };
 		577BEB361C3E12AA0014F543 /* DataTestDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 577BEB351C3E12AA0014F543 /* DataTestDemoTests.m */; };
+		577BEB3E1C3E13080014F543 /* ControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 577BEB3D1C3E13080014F543 /* ControllerTest.m */; };
 		5795C8301C3B613A001A35A7 /* NonConcurrentOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5795C82F1C3B613A001A35A7 /* NonConcurrentOperation.m */; };
 		5795C8331C3B65A5001A35A7 /* ConcurrentOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5795C8321C3B65A5001A35A7 /* ConcurrentOperation.m */; };
 		5795C8361C3B97C6001A35A7 /* UIColor+Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 5795C8351C3B97C6001A35A7 /* UIColor+Image.m */; };
@@ -53,6 +54,7 @@
 		577BEB331C3E12AA0014F543 /* DataTestDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataTestDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		577BEB351C3E12AA0014F543 /* DataTestDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataTestDemoTests.m; sourceTree = "<group>"; };
 		577BEB371C3E12AA0014F543 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		577BEB3D1C3E13080014F543 /* ControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControllerTest.m; sourceTree = "<group>"; };
 		5795C82E1C3B613A001A35A7 /* NonConcurrentOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NonConcurrentOperation.h; sourceTree = "<group>"; };
 		5795C82F1C3B613A001A35A7 /* NonConcurrentOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NonConcurrentOperation.m; sourceTree = "<group>"; };
 		5795C8311C3B65A5001A35A7 /* ConcurrentOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConcurrentOperation.h; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 			children = (
 				577BEB351C3E12AA0014F543 /* DataTestDemoTests.m */,
 				577BEB371C3E12AA0014F543 /* Info.plist */,
+				577BEB3D1C3E13080014F543 /* ControllerTest.m */,
 			);
 			path = DataTestDemoTests;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				577BEB361C3E12AA0014F543 /* DataTestDemoTests.m in Sources */,
+				577BEB3E1C3E13080014F543 /* ControllerTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
