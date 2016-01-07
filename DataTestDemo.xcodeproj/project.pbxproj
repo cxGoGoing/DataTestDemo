@@ -19,6 +19,7 @@
 		577BEB3E1C3E13080014F543 /* ControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 577BEB3D1C3E13080014F543 /* ControllerTest.m */; };
 		577BEB411C3E42080014F543 /* Person+AddProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 577BEB401C3E42080014F543 /* Person+AddProperty.m */; };
 		577BEB441C3E51BF0014F543 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 577BEB431C3E51BF0014F543 /* ThirdViewController.m */; };
+		577BEB471C3E55D60014F543 /* CustomCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 577BEB461C3E55D60014F543 /* CustomCollectionViewLayout.m */; };
 		5795C8301C3B613A001A35A7 /* NonConcurrentOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5795C82F1C3B613A001A35A7 /* NonConcurrentOperation.m */; };
 		5795C8331C3B65A5001A35A7 /* ConcurrentOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5795C8321C3B65A5001A35A7 /* ConcurrentOperation.m */; };
 		5795C8361C3B97C6001A35A7 /* UIColor+Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 5795C8351C3B97C6001A35A7 /* UIColor+Image.m */; };
@@ -61,6 +62,8 @@
 		577BEB401C3E42080014F543 /* Person+AddProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Person+AddProperty.m"; sourceTree = "<group>"; };
 		577BEB421C3E51BF0014F543 /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
 		577BEB431C3E51BF0014F543 /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
+		577BEB451C3E55D60014F543 /* CustomCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCollectionViewLayout.h; sourceTree = "<group>"; };
+		577BEB461C3E55D60014F543 /* CustomCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCollectionViewLayout.m; sourceTree = "<group>"; };
 		5795C82E1C3B613A001A35A7 /* NonConcurrentOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NonConcurrentOperation.h; sourceTree = "<group>"; };
 		5795C82F1C3B613A001A35A7 /* NonConcurrentOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NonConcurrentOperation.m; sourceTree = "<group>"; };
 		5795C8311C3B65A5001A35A7 /* ConcurrentOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConcurrentOperation.h; sourceTree = "<group>"; };
@@ -183,6 +186,8 @@
 				5795C82F1C3B613A001A35A7 /* NonConcurrentOperation.m */,
 				5795C8311C3B65A5001A35A7 /* ConcurrentOperation.h */,
 				5795C8321C3B65A5001A35A7 /* ConcurrentOperation.m */,
+				577BEB451C3E55D60014F543 /* CustomCollectionViewLayout.h */,
+				577BEB461C3E55D60014F543 /* CustomCollectionViewLayout.m */,
 			);
 			path = Operations;
 			sourceTree = "<group>";
@@ -368,6 +373,7 @@
 				5795C8401C3BB7B8001A35A7 /* Person+Property.m in Sources */,
 				57D863941C3AB81100B523CD /* MainViewController.m in Sources */,
 				5795C8301C3B613A001A35A7 /* NonConcurrentOperation.m in Sources */,
+				577BEB471C3E55D60014F543 /* CustomCollectionViewLayout.m in Sources */,
 				577BEB411C3E42080014F543 /* Person+AddProperty.m in Sources */,
 				5721FAF31C3AB72400DAD43C /* main.m in Sources */,
 			);
