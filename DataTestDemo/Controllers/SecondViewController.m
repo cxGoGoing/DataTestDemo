@@ -7,6 +7,7 @@
 //
 
 #import "SecondViewController.h"
+#import "ThirdViewController.h"
 typedef void(^MsgBlock)(NSString*message);
 @interface SecondViewController ()
 @property (nonatomic,copy)MsgBlock msgblock;
@@ -22,8 +23,22 @@ typedef void(^MsgBlock)(NSString*message);
     button.backgroundColor = [UIColor redColor];
     [self.view addSubview:button];
     [button addTarget:self action:@selector(clickMe2:) forControlEvents:UIControlEventTouchUpInside];
+
+    UIButton * anotherButton  = [UIButton buttonWithType:UIButtonTypeCustom];
+    anotherButton.frame = CGRectMake(200, 200, 50, 50);
+    anotherButton.backgroundColor = [UIColor yellowColor];
+    [anotherButton setTitle:@"Push Me" forState:UIControlStateNormal];
+    [anotherButton addTarget:self action:@selector(pushMeToAnotherController) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:anotherButton];
+
+    self.view.backgroundColor = [UIColor greenColor];
     // Do any additional setup after loading the view.
 }
+- (void)pushMeToAnotherController{
+    ThirdViewController * thirdVc = [[ThirdViewController alloc]init];
+    [self.navigationController pushViewController:thirdVc animated:YES];
+}
+
 - (void)blockWithMessage:(void (^)(NSString *))messageBlock{
     self.msgblock = messageBlock;
 }

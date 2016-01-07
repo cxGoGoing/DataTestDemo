@@ -29,8 +29,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-
+    self.view.backgroundColor = [UIColor blueColor];
     self.secondVc = [[SecondViewController alloc]init];
     self.secondVc.delegate = self;
 
