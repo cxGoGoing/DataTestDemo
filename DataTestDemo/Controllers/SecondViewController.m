@@ -10,6 +10,7 @@
 #import "ThirdViewController.h"
 #import "UIImageView+RoundRect.h"
 #import <PureLayout.h>
+#import "CustomView.h"
 typedef void(^MsgBlock)(NSString*message);
 @interface SecondViewController ()
 @property (nonatomic,copy)MsgBlock msgblock;
@@ -19,6 +20,17 @@ typedef void(^MsgBlock)(NSString*message);
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    CustomView * customV  = [[CustomView alloc]init];
+     [self.view addSubview:customV];
+    [customV autoPinEdgesToSuperviewEdges];
+    
+
+    [self testRoundRect];
+    [self setUpUI];
+    // Do any additional setup after loading the view.
+}
+/**  测试roundRect的渲染  */
+- (void)testRoundRect{
 
     UIImageView * imageView = [[UIImageView alloc]init];
     imageView.image = [UIImage imageNamed:@"logo"];
@@ -28,10 +40,6 @@ typedef void(^MsgBlock)(NSString*message);
     //[imageView autoCenterInSuperview];
     //[imageView autoSetDimensionsToSize:CGSizeMake(50, 50)];
     [imageView showWithRoundRectRadius:10];
-
-
-    [self setUpUI];
-    // Do any additional setup after loading the view.
 }
 - (void)setUpUI{
     UIButton * button = [[UIButton alloc]init];

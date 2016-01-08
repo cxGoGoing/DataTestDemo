@@ -12,6 +12,11 @@
 
 - (void)drawRect:(CGRect)rect{
     [super drawRect:rect];
+    [[UIColor redColor]setFill];
+    CGFloat w = ceilf([UIScreen mainScreen].bounds.size.width*0.2);
+    CGFloat h = ceilf([UIScreen mainScreen].bounds.size.height*0.1);
+    
+    UIRectFill(CGRectMake(0, 0, w, h));
 }
 
 @end
