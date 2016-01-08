@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface UIImageView (RoundRect)
-- (void)ShowWithRoundRectRadius:(CGFloat)radius;
+- (void)showWithRoundRectRadius:(CGFloat)radius;
 @end

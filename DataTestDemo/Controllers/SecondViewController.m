@@ -8,6 +8,8 @@
 
 #import "SecondViewController.h"
 #import "ThirdViewController.h"
+#import "UIImageView+RoundRect.h"
+#import <PureLayout.h>
 typedef void(^MsgBlock)(NSString*message);
 @interface SecondViewController ()
 @property (nonatomic,copy)MsgBlock msgblock;
@@ -17,6 +19,17 @@ typedef void(^MsgBlock)(NSString*message);
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    UIImageView * imageView = [[UIImageView alloc]init];
+    imageView.image = [UIImage imageNamed:@"logo"];
+    [self.view addSubview:imageView];
+    imageView.frame = CGRectMake(10, 74, 50, 50);
+    /**  自动布局的情况下,ImageView的frame值是0,0,0,0的,所以得要传递进去给绘制的实际尺寸才可以  */
+    //[imageView autoCenterInSuperview];
+    //[imageView autoSetDimensionsToSize:CGSizeMake(50, 50)];
+    [imageView showWithRoundRectRadius:10];
+
+
     [self setUpUI];
     // Do any additional setup after loading the view.
 }
@@ -35,7 +48,7 @@ typedef void(^MsgBlock)(NSString*message);
     [anotherButton addTarget:self action:@selector(pushMeToAnotherController) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:anotherButton];
 
-    self.view.backgroundColor = [UIColor greenColor];
+    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 - (void)pushMeToAnotherController{

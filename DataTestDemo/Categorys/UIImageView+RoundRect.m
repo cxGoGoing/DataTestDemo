@@ -9,7 +9,7 @@
 #import "UIImageView+RoundRect.h"
 
 @implementation UIImageView (RoundRect)
-- (void)ShowWithRoundRectRadius:(CGFloat)radius{
+- (void)showWithRoundRectRadius:(CGFloat)radius{
     UIGraphicsBeginImageContextWithOptions(self.bounds.size, NO, [UIScreen mainScreen].scale);
     [[UIBezierPath bezierPathWithRoundedRect:self.bounds cornerRadius:radius]addClip];
     [self.image drawInRect:self.bounds];
