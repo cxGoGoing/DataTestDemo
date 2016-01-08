@@ -12,11 +12,17 @@
 
 - (void)drawRect:(CGRect)rect{
     [super drawRect:rect];
-    [[UIColor redColor]setFill];
-    CGFloat w = ceilf([UIScreen mainScreen].bounds.size.width*0.2);
-    CGFloat h = ceilf([UIScreen mainScreen].bounds.size.height*0.1);
-    
-    UIRectFill(CGRectMake(0, 0, w, h));
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetLineWidth(context, 3);
+    CGContextMoveToPoint(context, 10, 100);
+    CGContextAddLineToPoint(context, 200, 100);
+    CGContextStrokePath(context);
+
+    CGContextMoveToPoint(context, 10, 105.5);
+    CGContextAddLineToPoint(context, 200, 105.5);
+    CGContextStrokePath(context);
+
+
 }
 
 @end

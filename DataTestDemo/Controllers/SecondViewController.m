@@ -20,13 +20,15 @@ typedef void(^MsgBlock)(NSString*message);
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
     CustomView * customV  = [[CustomView alloc]init];
-     [self.view addSubview:customV];
+    [self.view addSubview:customV];
+    customV.backgroundColor = [UIColor whiteColor];
     [customV autoPinEdgesToSuperviewEdges];
     
 
-    [self testRoundRect];
-    [self setUpUI];
+//    [self testRoundRect];
+//    [self setUpUI];
     // Do any additional setup after loading the view.
 }
 /**  测试roundRect的渲染  */
